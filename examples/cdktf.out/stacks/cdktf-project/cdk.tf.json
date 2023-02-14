@@ -3,21 +3,22 @@
     "metadata": {
       "backend": "local",
       "stackName": "cdktf-project",
-      "version": "0.15.3"
+      "version": "0.15.4"
     },
     "outputs": {
       "cdktf-project": {
         "bucket_arn": "bucket_arn",
-        "bucket_name": "bucket_name"
+        "bucket_name": "bucket_name",
+        "vpc_id": "vpc_id"
       }
     }
   },
   "module": {
-    "vpc": {
+    "my-vpc": {
       "//": {
         "metadata": {
-          "path": "cdktf-project/vpc",
-          "uniqueId": "vpc"
+          "path": "cdktf-project/my-vpc",
+          "uniqueId": "my-vpc"
         }
       },
       "azs": [
@@ -33,15 +34,13 @@
         "10.0.2.0/24",
         "10.0.3.0/24"
       ],
-      "providers": {
-        "aws": "aws"
-      },
       "public_subnets": [
         "10.0.101.0/24",
         "10.0.102.0/24",
         "10.0.103.0/24"
       ],
-      "source": "terraform-aws-modules/vpc/aws"
+      "source": "terraform-aws-modules/vpc/aws",
+      "version": "~> 3.0"
     }
   },
   "output": {
@@ -50,6 +49,9 @@
     },
     "bucket_name": {
       "value": "${aws_s3_bucket.s3-my-test-bucket.bucket}"
+    },
+    "vpc_id": {
+      "value": "${module.my-vpc.vpc_id}"
     }
   },
   "provider": {
@@ -80,13 +82,13 @@
   "terraform": {
     "backend": {
       "local": {
-        "path": "C:\\Users\\divyansh\\Documents\\cdktf-project\\examples\\terraform.cdktf-project.tfstate"
+        "path": "C:\\Users\\Nilay Shrimanwar\\Documents\\cdktf-project\\examples\\terraform.cdktf-project.tfstate"
       }
     },
     "required_providers": {
       "aws": {
         "source": "aws",
-        "version": "4.52.0"
+        "version": "4.54.0"
       }
     }
   }

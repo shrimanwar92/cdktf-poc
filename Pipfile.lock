@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "18fe6ccd1739918282f9772d9ab577f3f6bc74725b4b4c159340a7fa39233997"
+            "sha256": "7b360acb258c57b992c45448dc739dcee1cd5be09c2f2a43ef92b70835f2b492"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -34,19 +34,11 @@
         },
         "cdktf": {
             "hashes": [
-                "sha256:62c6cab9f8ffd8f9f8a8896d27438b3b0d8f91955513ef4ae8ccd58abbc6c67d",
-                "sha256:6a16c7ab36b26d6f34d171f4b47ba12d31c4ebfc01dc357d1fa9026693b12ac3"
+                "sha256:20674a6ae18edc98878d9841d1e0802fdfb1c42d67732aa036415401234e287f",
+                "sha256:a68265599244be72377fcdf7147a566b6b283d7975fe09058ad5149b3194d9e2"
             ],
             "index": "pypi",
-            "version": "==0.15.3"
-        },
-        "cdktf-cdktf-provider-aws": {
-            "hashes": [
-                "sha256:356d7474e4401d1422c28144a7081d41c5d08826ee50fcf77fc909f86ba27c52",
-                "sha256:567d6f6be42cdd77e25e292e0786109fb7d1982ce9b10e2d67d4bd7b6eba061d"
-            ],
-            "index": "pypi",
-            "version": "==12.0.2"
+            "version": "==0.15.4"
         },
         "colorama": {
             "hashes": [
@@ -58,11 +50,11 @@
         },
         "constructs": {
             "hashes": [
-                "sha256:cb095f49622fc6a2ad4fccb4270c76b7849a7f57c29024b2a0c1233057a67b1d",
-                "sha256:cc0da824d4eeee35f849149900669eee93c493341b33000b45de37150d4f20ea"
+                "sha256:5e3c5a700be21b0eb04e77dca8f09fc32d7668b28e42dfebadd9ba309a12d34b",
+                "sha256:b908a5de705630d0f1e6ad4a6ff13afc94f3a595575cef5feecff09e35eb2fb1"
             ],
             "markers": "python_version ~= '3.7'",
-            "version": "==10.1.244"
+            "version": "==10.1.249"
         },
         "iniconfig": {
             "hashes": [

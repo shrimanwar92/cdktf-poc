@@ -7,6 +7,5 @@ verify_ssl = true
 python_version = "3"
 
 [packages]
-cdktf = "~=0.15.3"
+cdktf = "~=0.15.4"
 pytest = "*"
-cdktf-cdktf-provider-aws = "*"

@@ -5,8 +5,9 @@ sys.path.append("..")
 from cdktf import App, TerraformOutput
 from constructs import Construct
 from lib.s3 import CXS3Bucket
-from lib.vpc import CXVpc
+from lib.vpc import CXvpc
 from main import MyStack
+from operator import itemgetter
 
 
 class TestS3Lib(MyStack):
@@ -32,16 +33,26 @@ class TestS3Lib(MyStack):
             ]
         }
 
-        my_bucket = CXS3Bucket(
-            name="my-test-bucket",
-            policy=s3_policy,
-            tags=s3_tags
-        ).create(self)
+        my_bucket = CXS3Bucket(self,
+                               name="my-test-bucket",
+                               policy=s3_policy,
+                               tags=s3_tags
+                               ).create()
 
-        vpc = CXVpc(
-            self.provider,
-            name="my-vpc"
-        ).create(self)
+        vpc = CXvpc(self,
+                    name="my-vpc",
+                    cidr="10.0.0.0/16",
+                    azs=['us-west-2a', 'us-west-2b', 'us-west-2c'],
+                    private_subnets=['10.0.1.0/24', '10.0.2.0/24', '10.0.3.0/24'],
+                    public_subnets=['10.0.101.0/24', '10.0.102.0/24', '10.0.103.0/24'],
+                    enable_nat_gateway=True
+                    ).create()
+
+        TerraformOutput(
+            self,
+            "vpc_id",
+            value=vpc.vpc_id_output,
+        )
 
         TerraformOutput(
             self,
@@ -54,12 +65,6 @@ class TestS3Lib(MyStack):
             "bucket_arn",
             value=my_bucket.arn,
         )
-
-        # TerraformOutput(
-        #     self,
-        #     "vpc_id",
-        #     value=vpc.vpc_id,
-        # )
 
 
 app = App()
