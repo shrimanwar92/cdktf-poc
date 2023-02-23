@@ -9,3 +9,4 @@ python_version = "3"
 [packages]
 cdktf = "~=0.15.4"
 pytest = "*"
+tftest = "~=1.8.2"

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 from constructs import Construct
-from cdktf import TerraformStack
+from cdktf import TerraformStack, TerraformOutput
 from imports.aws.provider import AwsProvider
+
 
 
 class MyStack(TerraformStack):

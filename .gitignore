@@ -5,3 +5,6 @@ imports/*
 cdktf.out
 cdktf.log
 *terraform.*.tfstate*
+.pytest*
+__pycache__
+.idea

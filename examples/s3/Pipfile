@@ -3,9 +3,14 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
+[scripts]
+integration-test = "cdktf deploy --auto-approve --outputs-file output.json && pytest"
+test = "pytest"
+
 [requires]
 python_version = "3"
 
 [packages]
 cdktf = "~=0.15.4"
 pytest = "*"
+boto3 = "~=1.26.75"

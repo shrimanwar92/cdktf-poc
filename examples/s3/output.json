@@ -1,0 +1,6 @@
+{
+  "cdktf-project": {
+    "bucket_arn": "arn:aws:s3:::my-test-bucket-nilays-1235432",
+    "bucket_name": "my-test-bucket-nilays-1235432"
+  }
+}
